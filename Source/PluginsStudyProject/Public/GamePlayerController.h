@@ -17,6 +17,8 @@ class PLUGINSSTUDYPROJECT_API AGamePlayerController : public APlayerController
 	GENERATED_BODY()
 	
 protected:
+	virtual void OnPossess(APawn* InPawn) override;
+	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
 	UInputMappingContext* InputMappingContext;
 	virtual void BeginPlay() override;
