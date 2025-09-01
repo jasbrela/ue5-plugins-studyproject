@@ -15,7 +15,7 @@ UCLASS(Abstract, BlueprintType, meta = (DisableNativeTick))
 class PLUGINSSTUDYPROJECT_API UGamePrimaryLayout : public UCommonUserWidget
 {
 	GENERATED_BODY()
-protected:
+public:
 	UFUNCTION(BlueprintCallable)
 	void RegisterWidgetStack(UPARAM(meta = (Categories = "Game.WidgetStack")) FGameplayTag Tag, UCommonActivatableWidgetContainerBase* Stack);
 

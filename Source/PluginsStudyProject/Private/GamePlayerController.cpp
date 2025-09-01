@@ -3,6 +3,7 @@
 
 #include "PluginsStudyProject/Public/GamePlayerController.h"
 #include "EnhancedInputSubsystems.h"
+#include "GameUISubsystem.h"
 #include "Blueprint/UserWidget.h"
 #include "Camera/CameraActor.h"
 #include "Kismet/GameplayStatics.h"
@@ -12,11 +13,13 @@ void AGamePlayerController::OnPossess(APawn* InPawn)
 	Super::OnPossess(InPawn);
 	
 	// SET UP PRIMARY LAYOUT
-	UWorld* World = GetWorld();
-	if (IsValid(PrimaryLayoutClass) && World)
+	if (UWorld* World = GetWorld(); IsValid(PrimaryLayoutClass) && World)
 	{
-		UUserWidget* Widget = CreateWidget(World, PrimaryLayoutClass);
+		UGamePrimaryLayout* Widget = CreateWidget<UGamePrimaryLayout>(World, PrimaryLayoutClass);
 		Widget->AddToViewport();
+
+		UGameUISubsystem* UISubsystem = GetGameInstance()->GetSubsystem<UGameUISubsystem>();
+		UISubsystem->RegisterCreatedPrimaryLayoutWidget(Widget);
 	}
 
 	// SET UP CAMERA
