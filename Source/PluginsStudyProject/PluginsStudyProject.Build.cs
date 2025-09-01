@@ -15,10 +15,10 @@ public class PluginsStudyProject : ModuleRules
 			"Engine",
 			"InputCore",
 			"EnhancedInput",
+			"UMG",
+			"GameplayTags",
 			"CommonUI",
 			"ModelViewViewModel",
-			"GameplayTags",
-			"UMG"
 		});
 
 		PrivateDependencyModuleNames.AddRange(new string[] { });

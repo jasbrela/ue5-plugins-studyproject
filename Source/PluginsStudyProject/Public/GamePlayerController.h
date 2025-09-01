@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
+#include "Widgets/GamePrimaryLayout.h"
 #include "GamePlayerController.generated.h"
 
 class UInputMappingContext;
@@ -18,6 +19,9 @@ class PLUGINSSTUDYPROJECT_API AGamePlayerController : public APlayerController
 	
 protected:
 	virtual void OnPossess(APawn* InPawn) override;
+
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UGamePrimaryLayout> PrimaryLayoutClass;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
 	UInputMappingContext* InputMappingContext;
