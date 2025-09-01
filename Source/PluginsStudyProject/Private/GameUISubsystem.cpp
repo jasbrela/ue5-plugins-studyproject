@@ -52,6 +52,7 @@ void UGameUISubsystem::PushSoftWidgetToStackAsync(const FGameplayTag& Tag,
 	UGameActivatableWidgetBase*)> AsyncPushStateCallback)
 {
 	check(!WidgetClass.IsNull());
+	
 	UAssetManager::Get().GetStreamableManager().RequestAsyncLoad(
 		WidgetClass.ToSoftObjectPath(), FStreamableDelegate::CreateLambda(
 		[WidgetClass, this, Tag, AsyncPushStateCallback]()

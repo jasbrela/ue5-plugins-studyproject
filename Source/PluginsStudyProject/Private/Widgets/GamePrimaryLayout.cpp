@@ -7,13 +7,15 @@ void UGamePrimaryLayout::RegisterWidgetStack(UPARAM(meta = (Categories = "Game.W
 {
 	if (IsDesignTime())
 	{
-		if (RegisteredWidgetStackMap.Contains(Tag))
-		{
-			return;
-		}
-
-		RegisteredWidgetStackMap.Add(Tag, Stack);
+		return;
 	}
+	
+	if (RegisteredWidgetStackMap.Contains(Tag))
+	{
+		return;
+	}
+
+	RegisteredWidgetStackMap.Add(Tag, Stack);
 }
 
 UCommonActivatableWidgetContainerBase* UGamePrimaryLayout::FindWidgetStackByTag(const FGameplayTag Tag)

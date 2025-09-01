@@ -2,6 +2,8 @@
 
 
 #include "PluginsStudyProject/Public/GamePlayerController.h"
+
+#include "DebugMacros.h"
 #include "EnhancedInputSubsystems.h"
 #include "GameUISubsystem.h"
 #include "Blueprint/UserWidget.h"
@@ -20,6 +22,13 @@ void AGamePlayerController::OnPossess(APawn* InPawn)
 
 		UGameUISubsystem* UISubsystem = GetGameInstance()->GetSubsystem<UGameUISubsystem>();
 		UISubsystem->RegisterCreatedPrimaryLayoutWidget(Widget);
+
+		/*
+		auto tag = UGameplayTagsManager::Get().RequestGameplayTag("Game.WidgetStack.Menu");
+		UISubsystem->PushSoftWidgetToStackAsync(tag, DebugActivatableWidget, [](EAsyncPushWidgetState State, UGameActivatableWidgetBase* Widget)
+		{
+			LOG("DEBUG!!!!!!!");
+		});*/
 	}
 
 	// SET UP CAMERA

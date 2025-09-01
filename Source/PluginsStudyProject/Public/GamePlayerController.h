@@ -7,6 +7,7 @@
 #include "Widgets/GamePrimaryLayout.h"
 #include "GamePlayerController.generated.h"
 
+class UGameActivatableWidgetBase;
 class UInputMappingContext;
 
 /**
@@ -22,6 +23,8 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<UGamePrimaryLayout> PrimaryLayoutClass;
+	UPROPERTY(EditDefaultsOnly)
+	TSoftClassPtr<UGameActivatableWidgetBase> DebugActivatableWidget;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
 	UInputMappingContext* InputMappingContext;
