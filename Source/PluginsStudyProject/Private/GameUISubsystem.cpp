@@ -3,9 +3,7 @@
 
 #include "GameUISubsystem.h"
 
-#include "ConsolidateWindow.h"
 #include "DebugMacros.h"
-#include "Components/WidgetInteractionComponent.h"
 #include "Engine/AssetManager.h"
 #include "Widgets/CommonActivatableWidgetContainer.h"
 #include "Widgets/GameActivatableWidgetBase.h"
