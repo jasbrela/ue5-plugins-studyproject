@@ -13,4 +13,5 @@ namespace GameGameplayTags
 	
 	// Widgets
 	UE_DEFINE_GAMEPLAY_TAG(Game_Widget_PressAnyKey, "Game.Widget.PressAnyKey");
+	UE_DEFINE_GAMEPLAY_TAG(Game_Widget_MainMenu, "Game.Widget.MainMenu");
 }
